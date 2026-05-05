@@ -1,0 +1,10 @@
+source_node,target_node,source_label,target_label,travel_time_minutes,route_type,notes
+N0,N1,Main Distribution Center (Tuzla),Regional Hub 1 (Pendik East),25,Highway route,Fast access via E-80 highway
+N0,N2,Main Distribution Center (Tuzla),Regional Hub 2 (Gebze Border),18,Alternative industrial route,OIZ inner roads shorter distance
+N1,N3,Regional Hub 1 (Pendik East),Transfer Point A (Kurtkoy),20,Main artery,D-100 connection
+N2,N3,Regional Hub 2 (Gebze Border),Transfer Point A (Kurtkoy),35,Backstreet connection,High city traffic impact
+N2,N4,Regional Hub 2 (Gebze Border),Transfer Point B (Kaynarca),25,Coastal road connection,Parallel to TEM coastal road
+N3,N5,Transfer Point A (Kurtkoy),Local Station (Guzelyali),17,Connection road,Neighborhood connection road
+N4,N5,Transfer Point B (Kaynarca),Local Station (Guzelyali),19,Local route,Short distance local street
+N4,N6,Transfer Point B (Kaynarca),Customer Delivery Zone (Pendik West),46,Heavy traffic direct route,High congestion during peak hours
+N5,N6,Local Station (Guzelyali),Customer Delivery Zone (Pendik West),20,Last-mile delivery route,Neighborhood last delivery step

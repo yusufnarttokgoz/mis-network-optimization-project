@@ -1,0 +1,25 @@
+=================================================================
+  MarmaraCargo | Shortest Path Analysis Results
+=================================================================
+Target Delivery : N0 -> N6
+Fastest Route   : N0 -> N2 -> N4 -> N5 -> N6
+Total Time      : 82 minutes
+
+--- Step-by-Step Route Details ---
+Step   From   To     Time (min)   Route Type
+-----------------------------------------------------------------
+1      N0     N2     18           Alternative industrial route
+2      N2     N4     25           Coastal road connection
+3      N4     N5     19           Local route
+4      N5     N6     20           Last-mile delivery route
+-----------------------------------------------------------------
+              TOTAL: 82 min
+
+--- Alternative Routes Comparison ---
+#    Route                               Total Time (min)
+-----------------------------------------------------------------
+1    N0 -> N1 -> N3 -> N5 -> N6          82  <-- FASTEST
+2    N0 -> N2 -> N4 -> N5 -> N6          82
+3    N0 -> N2 -> N4 -> N6                89
+4    N0 -> N2 -> N3 -> N5 -> N6          90
+=================================================================
