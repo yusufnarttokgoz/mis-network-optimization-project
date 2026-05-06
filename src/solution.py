@@ -1,20 +1,16 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue May  5 15:38:47 2026
-
-@author: Yusuf Nart Tokgöz
-"""
 import csv
+import os
 import networkx as nx
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
-# --- File Paths ---
-csv_file_path = "data/marmaracargo_edges.csv"
-img_output_path = "results/marmaracargo_network_visualization.png"
+#File Paths
+script_dir = os.path.dirname(os.path.abspath(__file__))
+csv_file_path = os.path.join(script_dir, "..", "data", "marmaracargo_edges.csv")
+img_output_path = os.path.join(script_dir, "..", "results", "marmaracargo_network_visualization.png")
 
 
-# --- Graph Initialization & Data Loading ---
+#Graph Initialization & Data Loading
 G = nx.DiGraph()
 NODE_LABELS = {}
 
@@ -39,16 +35,15 @@ with open(csv_file_path, newline="", encoding="utf-8") as f:
 
         G.add_edge(src, tgt, weight=weight, route_type=route)
 
-# --- Dijkstra's Algorithm ---
+#Dijkstra's Algorithm
 SOURCE = "N0"
 TARGET = "N6"
 
 shortest_path = nx.dijkstra_path(G, source=SOURCE, target=TARGET, weight="weight")
 shortest_time = nx.dijkstra_path_length(G, source=SOURCE, target=TARGET, weight="weight")
 
-# =============================================================================
 # CONSOLE OUTPUT & SAVING TO TXT
-# =============================================================================
+
 output_lines = []
 output_lines.append("=" * 65)
 output_lines.append("  MarmaraCargo | Shortest Path Analysis Results")
@@ -88,14 +83,12 @@ final_output = "\n".join(output_lines)
 print(final_output)
 
 # Save the output to solution_output.txt 
-txt_output_path = "results/solution_output.txt"
+txt_output_path = os.path.join(script_dir, "..", "results", "solution_output.txt")
 with open(txt_output_path, "w", encoding="utf-8") as text_file:
     text_file.write(final_output)
-    
 
-# =============================================================================
 # VISUALIZATION
-# =============================================================================
+
 
 pos = {
     "N0": (0, 1), "N1": (1.5, 2), "N2": (1.5, 0), "N3": (3, 2),
